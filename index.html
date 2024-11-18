@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>AXS Lucky Draw</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/app.css" />
+  </head>
+
+  <body>
+    <video autoplay muted loop id="background-video">
+      <source src="assets/lucky_draw_bd.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+    <div class="container">
+      <div class="slot-main">
+        <div class="prize-title-holder">
+          <div class="prize-title-container">
+            <h3 class="prize-title-main">Welcome to AXS Lucky Draw</h3>
+          </div>
+        </div>
+        <div class="slotwrapper" id="example2">
+          <ul class="machine-left">
+            <li class="1 item-Foldable-Bags"><img src="assets/fold-bag.jpg" /></li>
+            <li class="2 item-Whiteboards"><img src="assets/Whiteboards.jpg" /></li>
+            <li class="3 item-Portable-Fans"><img src="assets/Portable Fans.jpg" /></li>
+            <!-- <li class="4 item-TADA-Vouchers"><img src="assets/TADA Vouchers.jpg" /></li> -->
+          </ul>
+          <ul class="machine-center">
+            <li class="1 item-Whiteboards"><img src="assets/Whiteboards.jpg" /></li>
+            <li class="2 item-Portable-Fans"><img src="assets/Portable Fans.jpg" /></li>
+            <li class="3 item-Foldable-Bags"><img src="assets/fold-bag.jpg" /></li>
+            <!-- <li class="3 item-TADA-Vouchers"><img src="assets/TADA Vouchers.jpg" /></li> -->
+          </ul>
+          <ul class="machine-right">
+            <!-- <li class="1 item-TADA-Vouchers"><img src="assets/TADA Vouchers.jpg" /></li> -->
+            <li class="1 item-Portable-Fans"><img src="assets/Portable Fans.jpg" /></li>
+            <li class="2 item-Foldable-Bags"><img src="assets/fold-bag.jpg" /></li>
+            <li class="3 item-Whiteboards"><img src="assets/Whiteboards.jpg" /></li>
+          </ul>
+        </div>
+        <div class="spin-button-container">
+          <div class="button-wrap">
+            <button type="button" id="btn-spin" type="button">SPIN</button>
+          </div>
+        </div>
+      </div>
+      <div class="setting-btn" id="setting-btn"><img src="assets/logo.png" /></div>
+      <div class="sm-setting">
+        <div class="sm-setting-inner">
+          <div class="item-input">
+            <input type="text" id="item-name" placeholder="Item Name" />
+            <input
+              type="number"
+              id="item-probability"
+              placeholder="Probability"
+              step="0.01"
+              min="0"
+              max="1" />
+            <button id="add-item">Add Item</button>
+          </div>
+        </div>
+        <ul id="item-list"></ul>
+      </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+    <script src="js/slotmachine.js"></script>
+  </body>
+</html>

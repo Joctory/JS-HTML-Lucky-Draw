@@ -1,0 +1,272 @@
+@import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap");
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-family: "Fredoka", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Video Background */
+#background-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1; /* Ensure it stays behind other content */
+}
+
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* Setting */
+.setting-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 10px;
+  width: 150px;
+}
+
+.setting-btn img {
+  width: 100%;
+}
+
+.sm-setting {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #fff;
+  padding: 20px 20px 30px 20px;
+  border-radius: 20px 20px 0 0;
+  z-index: 99;
+}
+
+.sm-setting-inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* Spin Button */
+.spin-button-container {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+/* Slot Machine */
+.prize-title-holder {
+  width: 625px;
+  height: 125px;
+  max-width: 625px;
+  max-height: 125px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url("../assets/machine-top.png");
+  background-repeat: repeat;
+  background-size: auto;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  border-radius: 10px 10px 0 0;
+  padding: 20px;
+  margin-bottom: -20px;
+  z-index: 1;
+  box-sizing: border-box;
+  position: absolute;
+  top: -105px;
+}
+
+.prize-title-container {
+  width: 100%;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.prize-title-main {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  margin: 0;
+  font-size: 28px;
+  font-weight: 500;
+  text-shadow: 1px 1px 0px #f00;
+  color: #ff7b00;
+}
+
+span.selected {
+  color: #e62143;
+  font-weight: 600;
+  font-size: 26px;
+  animation: blinker 1s linear infinite;
+}
+
+.slot-main {
+  width: 620px;
+  max-width: 620px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: #e86e00;
+  border-radius: 15px;
+  box-shadow: 0px 4px 7px 3px #00000075;
+}
+
+.slotwrapper {
+  overflow: hidden;
+  display: inline-block;
+  border: 10px solid rgba(255, 100, 0, 1);
+  background: radial-gradient(
+    circle,
+    rgba(255, 0, 0, 1) 0%,
+    rgba(255, 100, 0, 1) 50%,
+    rgba(255, 0, 0, 1) 100%
+  );
+  height: 200px;
+  border-radius: 15px 15px 0 0;
+}
+.slotwrapper ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  position: relative;
+  float: left;
+}
+.slotwrapper ul {
+  width: 200px;
+  height: 200px;
+  font-size: 200px;
+  line-height: 200px;
+  text-align: center;
+}
+.slotwrapper ul li {
+  height: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  background-color: #0f0959;
+}
+.slotwrapper ul li img {
+  width: 100%;
+  height: 100%;
+  vertical-align: top;
+}
+.machine-center li,
+.machine-right li {
+  box-shadow: -1px 0 0 #fff, 1px 0 0 #fff;
+}
+
+/* Button */
+.button-wrap {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  margin: 0 auto;
+  margin-top: 10px;
+  width: 200px;
+  height: 200px;
+  background: #e0e0e0;
+  border-radius: 200px;
+  border-top: 1px solid rgba(255, 255, 255, 0.65);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.65);
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.1);
+}
+
+.button-wrap:before {
+  content: " ";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  border-radius: 100%;
+  z-index: 1;
+  opacity: 0.5;
+  transition: all 0.25s ease;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(0, 0, 0, 0.65) 0%,
+    rgba(0, 0, 0, 0.65) 57%,
+    rgba(0, 0, 0, 0) 69%,
+    rgba(0, 0, 0, 0) 100%
+  ); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+
+#btn-spin span {
+  display: block;
+  font-size: 20px;
+  letter-spacing: normal;
+  font-weight: normal;
+  color: #999;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+#btn-spin:hover span {
+  opacity: 1;
+  color: #555;
+}
+
+#btn-spin {
+  position: relative;
+  width: 90%;
+  height: 90%;
+  border-radius: 100%;
+  margin-top: 5%;
+  border: none;
+  font-weight: bold;
+  letter-spacing: -0.05em;
+  color: #ccc;
+  text-shadow: 0 2px 0 rgb(255, 83, 26);
+  font-size: 50px;
+  z-index: 2;
+  /*box-shadow: 10px 10px 10px rgba(0,0,0,.1);*/
+  border: 1px solid #fafafa;
+  transition: drop-shadow 0.25s ease;
+  box-shadow: 0px 4px 7px 3px #00000075;
+
+  background: #e62143;
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e5e5e5',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+
+.button-wrap:active:before {
+  width: 96%;
+  height: 96%;
+  left: 2%;
+  top: 2%;
+}
+
+#btn-spin:hover,
+.clicked #btn-spin {
+  color: #ff9864;
+  background: #e62143; /* Old browsers */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#feffff', endColorstr='#d2ebf9',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+
+@media screen and (max-width: 768px) {
+}
